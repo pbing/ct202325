@@ -10,3 +10,4 @@ ghci vigenere.hs
 
 ## Reference
 * [Wilhelm Drehling, "Cäsar im Quadrat", c't 2023, Heft 25, S. 154 ff.](https://www.heise.de/select/ct/2023/25/2327113243167325005)
+* [Python-Programm im GitHub-Repository: ct.de/yvkq](https://ct.de/yvkq)
