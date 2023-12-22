@@ -1,4 +1,4 @@
-# Vigenère Chiffre in Haskell
+# Vigenère chiffre in Haskell
 
 ## Installation
 

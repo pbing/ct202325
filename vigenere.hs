@@ -3,13 +3,13 @@
 import Data.Char
 
 encode :: String -> String -> String
-encode text key = zipWith rot text (cycle key)
+encode key text = zipWith rot text (cycle key)
   where
     rot :: Char -> Char -> Char
     rot t k = chr $ let x = ord t + (ord k - ord 'A') in if x > ord 'Z' then x - 26 else x
 
 decode :: String -> String -> String
-decode text key = zipWith rot text (cycle key)
+decode key cipher = zipWith rot cipher (cycle key)
   where
     rot :: Char -> Char -> Char
     rot t k = chr $ let x = ord t - (ord k - ord 'A') in if x < ord 'A' then x + 26 else x
@@ -17,9 +17,9 @@ decode text key = zipWith rot text (cycle key)
 {-
 All strings must be regex [A-Z]
 
-encode "DASISTEINLANGERBEISPIELTEXT" "CTMAGAZIN"
+encode "CTMAGAZIN" "DASISTEINLANGERBEISPIELTEXT"
 "FTEIYTDQANTZGKRAMVUIUERTDFG"
 
-decode "FTEIYTDQANTZGKRAMVUIUERTDFG" "CTMAGAZIN"
+decode "CTMAGAZIN" "FTEIYTDQANTZGKRAMVUIUERTDFG"
 "DASISTEINLANGERBEISPIELTEXT"
 -}
